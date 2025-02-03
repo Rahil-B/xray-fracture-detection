@@ -12,3 +12,5 @@ YOLOv8x-best.pt
 input-image.png
 convert-file.png
 convert-file.dicom
+notebook/.DS_Store
+.DS_Store

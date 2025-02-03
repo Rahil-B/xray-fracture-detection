@@ -48,14 +48,15 @@ def predict():
             filename = f"static/input-image.png"
             file.save(filename)
             os.chdir('static/')
-            model = YOLO('YOLOv8x-best.pt')
+            # model = YOLO('YOLOv8x-best.pt')
+            model = YOLO('/Users/rahil/Documents/JioClass/Q3 DeepLearning/YOLO Project/YOLOv8x.pt')
             model('input-image.png', save=True, save_txt=True)
             os.chdir('../')
 
         now = datetime.datetime.now()
         date_of_scan = now.strftime("%B %d, %Y")
         if os.path.exists('static/runs/detect/predict/labels/input-image.txt'):
-            annotations = yolo_to_dict('static/runs/detect/predict/labels/input-image.txt', 'static/runs/detect/predict/input-image.png')
+            annotations = yolo_to_dict('static/runs/detect/predict/labels/input-image.txt', '/Users/rahil/Documents/JioClass/Q3 DeepLearning/YOLO Project/pediatric_wrist_abnormality_detection-end-to-end-implementation/static/runs/detect/predict/input-image.jpg')
         else:
             annotations = ''
         timestamp = now.strftime('%Y%m%d%H%M%S')
@@ -102,7 +103,8 @@ def detection_api_predict():
             if not os.path.exists('API_DIR'):
                 os.mkdir('API_DIR')
             os.chdir('API_DIR/')
-            model = YOLO('../YOLOv8x-best.pt')
+            # model = YOLO('../YOLOv8x-best.pt')
+            model = YOLO('/Users/rahil/Documents/JioClass/Q3 DeepLearning/YOLO Project/YOLOv8x.pt')
             model('../detection_api_input-image.png', save=True)
             os.chdir('../../')
 
