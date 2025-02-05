@@ -37,11 +37,6 @@ def start_converting():
 def predict():
     remove_files()
     if request.method == 'POST':
-        patient_name = request.form['Name']
-        age = request.form['Age']
-        gender = request.form['Gender']
-        side = request.form['Side']
-        projection = request.form['Projection']
         file = request.files.get('input-image')
 
         if file and allowed_file(file.filename):
@@ -61,10 +56,6 @@ def predict():
             annotations = ''
         timestamp = now.strftime('%Y%m%d%H%M%S')
         return render_template('result.html', 
-                            patient_name=patient_name, 
-                            age=age, 
-                            gender=gender,
-                            side=side,projection=projection,
                             date_of_scan=date_of_scan, 
                             annotations=annotations,
                             timestamp=timestamp)

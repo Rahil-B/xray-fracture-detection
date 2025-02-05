@@ -71,43 +71,6 @@
 
   <body>
     <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top">
-      <div class="container d-flex align-items-center">
-        <a href="/" class="logo me-auto"
-          ><img
-            src="{{ url_for('static', filename='assets/img/logo.png')}}"
-            alt=""
-        /></a>
-
-        <nav id="navbar" class="navbar order-last order-lg-0">
-          <ul>
-            <li><a class="nav-link scrollto" href="/">Home</a></li>
-
-            <li>
-              <a class="nav-link scrollto" href="/#Research-Paper">Research</a>
-            </li>
-            <li>
-              <a class="nav-link scrollto" href="/documentation"
-                >Documentation</a
-              >
-            </li>
-            <li>
-              <a class="nav-link scrollto" href="/conversion_tool"
-                >Conversion Tool</a
-              >
-            </li>
-            <li><a class="nav-link scrollto" href="/#about">About</a></li>
-            <li><a class="nav-link scrollto" href="/#contact">Contact</a></li>
-          </ul>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-        </nav>
-        <!-- .navbar -->
-
-        <a href="/#appointment" class="appointment-btn scrollto"
-          ><span class="d-none d-md-inline">DIAGNOSE X-RAY</span></a
-        >
-      </div>
-    </header>
     <!-- End Header -->
 
     <!-- Main -->
@@ -119,10 +82,6 @@
       >
         <div class="image-magnifier">
           <div id="lens"></div>
-          <label class="switch">
-            <input id="image-type" type="checkbox" checked />
-            <span class="slider round"></span>
-          </label>
           <div id="slideshow-items-container">
             <img
               class="slideshow-items active predicted-image"
@@ -136,32 +95,8 @@
           <h3 class="report-heading">
             Diagnosis Report
 
-            <span><i class="fa fa-print" id="print-button"></i> </span>
           </h3>
-          <br />
-          <table class="patient-info">
-            <tr>
-              <td class="bold">Patient Name:</td>
-              <td class="dragfromleft-1">{{ patient_name }}</td>
-
-              <td class="bold dragfromleft-2">Age:</td>
-              <td class="dragfromleft-1">{{ age }}</td>
-            </tr>
-            <tr>
-              <td class="bold">Gender:</td>
-              <td class="dragfromleft-1">{{ gender }}</td>
-
-              <td class="bold dragfromleft-2">Wrist Side:</td>
-              <td class="dragfromleft-1">{{ side }}</td>
-            </tr>
-            <tr>
-              <td class="bold">Projection:</td>
-              <td class="dragfromleft-1">{{ projection }}</td>
-
-              <td class="bold dragfromleft-2">Date of Scan:</td>
-              <td class="dragfromleft-1">{{ date_of_scan }}</td>
-            </tr>
-          </table>
+          <br />         
 
           <hr />
           {% if annotations %}
@@ -203,15 +138,6 @@
             <span class="abnormalities">wrist abnormalities</span>.
           </h5>
           {% endif %}
-          <p class="disclaimer">
-            The medical scan was processed using an artificial intelligence
-            algorithm that analyzed the image for abnormalities. While the
-            algorithm is highly accurate, the results should be reviewed and
-            validated by a trained medical professional before being used for
-            diagnosis or treatment decisions. Please consult with a qualified
-            medical professional for further evaluation and treatment
-            recommendations.
-          </p>
         </div>
       </section>
       <!-- End Result -->
