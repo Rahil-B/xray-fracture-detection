@@ -3,6 +3,8 @@
 conda activate python_3_10_16
 flask --app app.py --debug run
 
+## data 
+[text](https://www.kaggle.com/datasets/jasonroggy/grazpedwri-dx)
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/enhancing-wrist-abnormality-detection-with/object-detection-on-grazpedwri-dx)](https://paperswithcode.com/sota/object-detection-on-grazpedwri-dx?p=enhancing-wrist-abnormality-detection-with)
 
